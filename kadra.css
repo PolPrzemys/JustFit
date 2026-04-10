@@ -1,4 +1,3 @@
-
 body {
     background-image: url(banner.jpg);
     background-size: cover;
@@ -9,7 +8,6 @@ body {
     color: #333;
 }
 
-/* Nagłówek */
 .header {
     text-align: center;
     background-color: rgba(203, 240, 41, 0.7);
@@ -34,7 +32,6 @@ body {
     animation-delay: 0.7s;
 }
 
-/* Sekcja zespołu */
 .team-section {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +40,6 @@ body {
     gap: 20px;
 }
 
-/* Stylizacja członków zespołu */
 .team-member {
     background-color: white;
     border: 1px solid #ddd;
@@ -56,8 +52,8 @@ body {
 }
 
 .team-member:hover {
-    transform: scale(1.1); /* Powiększenie białego prostokąta */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Głębszy cień */
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .team-member img {
@@ -68,7 +64,7 @@ body {
 }
 
 .team-member:hover img {
-    transform: scale(1.2); /* Powiększenie obrazu wewnątrz powiększonego prostokąta */
+    transform: scale(1.2);
 }
 
 .team-member h2 {
@@ -87,7 +83,6 @@ body {
     color: #333;
 }
 
-/* Animations */
 @keyframes fadeInBackground {
     from {
         opacity: 0;

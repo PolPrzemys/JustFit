@@ -11,7 +11,6 @@ try {
     die('<h1>Błąd połączenia: ' . $e->getMessage() . '</h1>');
 }
 
-// Odczyt obecności z pliku
 $file = 'attendance_data.txt';
 $present = [];
 if (file_exists($file)) {
@@ -33,7 +32,6 @@ if (file_exists($file)) {
     <link rel="stylesheet" href="../assets/css/main.css" />
     
     <style>
-        
         #addKarnetForm input[type="text"], 
         #addKarnetForm input[type="date"] {
             color: #333333 !important; 
@@ -41,13 +39,11 @@ if (file_exists($file)) {
             border: 1px solid #cccccc !important;
         }
 
-        
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: none !important; 
             cursor: pointer;
         }
 
-        
         #addKarnetForm input:focus {
             color: #000000 !important;
             background-color: #f0f0f0 !important;

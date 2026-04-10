@@ -11,7 +11,6 @@ try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_input = $_POST['username'] ?? '';
 
-        // 1. Logika sprawdzania użytkownika
         if ($user_input === 'admin') {
             $role = 'admin';
             $welcome_name = "Szefie (Administratorze)";

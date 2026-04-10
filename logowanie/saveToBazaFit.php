@@ -13,14 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Transakcja: albo obie tabele, albo żadna
         $pdo->beginTransaction();
 
-        // 1. Dodanie do users 
         $stmt1 = $pdo->prepare("INSERT INTO users (name, membership_number) VALUES (:name, :number)");
         $stmt1->execute([':name' => $name, ':number' => $membership_number]);
 
-        // 2. Dodanie do karnety 
         $stmt2 = $pdo->prepare("INSERT INTO karnety (name, expiration_date) VALUES (:name, :date)");
         $stmt2->execute([':name' => $name, ':date' => $expiration_date]);
 
