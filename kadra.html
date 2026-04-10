@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadra - JustFit Opatów</title>
+    <link rel="stylesheet" href="kadra.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Nasz Zespół</h1>
+        <p>Poznaj profesjonalistów, którzy pomogą Ci osiągnąć Twoje cele.</p>
+        <nav id="nav" style="position:absolute; top:10px; right:10px;">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle" style="background:rgba(255,255,255,0.2); padding:10px 15px; border-radius:5px; color:white; text-decoration:none; font-weight:bold;">Menu</a>
+                    <div id="menu" style="position:absolute; top:100%; right:0; background:rgba(0,0,0,0.9); color:white; min-width:180px; padding:0; border-radius:5px; box-shadow:0 4px 8px rgba(0,0,0,0.3); display:none; z-index:1000;">
+                        <ul style="list-style:none; margin:0; padding:10px 0;">
+                            <li><a href="index.html" style="color:white; display:block; padding:12px 20px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">Strona główna</a></li>
+                            <li><a href="generic.html" style="color:white; display:block; padding:12px 20px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">Kontakt</a></li>
+                            <li><a href="login.html" style="color:white; display:block; padding:12px 20px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">Lista obecności</a></li>
+                            <li><a href="kadra.html" style="color:white; display:block; padding:12px 20px; text-decoration:none;">Nasza kadra</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="team-section">
+        <div class="team-member">
+            <img src="Placeholder.png" alt="Anna Kowalska">
+            <h2>Anna Kowalska</h2>
+            <p><strong>Specjalizacja:</strong> Trening personalny, pilates</p>
+            <p>Anna to doświadczona trenerka, która pomoże Ci w poprawie kondycji i osiągnięciu wymarzonej sylwetki.</p>
+        </div>
+        <div class="team-member">
+            <img src="Placeholder.png" alt="Piotr Nowak">
+            <h2>Piotr Nowak</h2>
+            <p><strong>Specjalizacja:</strong> Trening siłowy, dieta</p>
+            <p>Piotr ma wieloletnie doświadczenie w treningu siłowym i układaniu planów żywieniowych.</p>
+        </div>
+        <div class="team-member">
+            <img src="Placeholder.png" alt="Joanna Wiśniewska">
+            <h2>Joanna Wiśniewska</h2>
+            <p><strong>Specjalizacja:</strong> Joga, stretching</p>
+            <p>Joanna wprowadzi Cię w świat relaksu, jogi i poprawy elastyczności Twojego ciała.</p>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.menuToggle').click(function(e) {
+                e.preventDefault();
+                $('#menu').toggle();
+            });
+            $(document).click(function(e) {
+                if (!$(e.target).closest('#nav').length) {
+                    $('#menu').hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

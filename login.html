@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JustFit Opatów</title>
+    <link rel="stylesheet" href="kadra.css">
+    <style>
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .header {
+            background-color: rgba(203, 240, 41, 0.8); 
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            animation: fadeInBackground 1s ease-in forwards;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            opacity: 0;
+            animation: fadeInText 1s ease-in forwards;
+            animation-delay: 0.5s;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeInText 1s ease-in forwards;
+            animation-delay: 0.7s;
+        }
+        
+        #nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .menuToggle {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            min-width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        #menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #menu li a {
+            color: white;
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+        }
+        /* Login box exactly like team-member cards */
+        .login-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            flex: 1;
+        }
+        .login-member {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            padding: 30px 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+        .login-member:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        .login-member h2 {
+            margin: 0 0 25px 0;
+            font-size: 1.6rem;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Logowanie</h1>
+        <p>Wejdź do systemu zarządzania obecnościami i karnetami</p>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle">Menu</a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="index.html">Strona główna</a></li>
+                            <li><a href="generic.html">Kontakt</a></li>
+                            <li><a href="login.html">Lista obecności</a></li>
+                            <li><a href="kadra.html">Nasza kadra</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="login-section">
+        <div class="login-member">
+            <h2>📋 Wejście do Panelu</h2>
+            <form action="logowanie/login.php" method="POST">
+                <div class="form-group">
+                    <label for="username">Nazwa użytkownika</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Zaloguj się</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.menuToggle').click(function(e) {
+                e.preventDefault();
+                $('#menu').toggle();
+            });
+            $(document).mouseup(function(e) {
+                var container = $('#nav');
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    $('#menu').hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
