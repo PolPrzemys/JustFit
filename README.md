@@ -1,4 +1,4 @@
-#🏋️ JustFit - System Zarządzania Klubem Fitness Projekt fullstackowej aplikacji webowej wspomagającej pracę klubu fitness, umożliwiający zarządzanie bazą członków, karnetami oraz monitorowanie obecności.
+🏋️ JustFit - System Zarządzania Klubem Fitness Projekt fullstackowej aplikacji webowej wspomagającej pracę klubu fitness, umożliwiający zarządzanie bazą członków, karnetami oraz monitorowanie obecności.
 
 🚀 Funkcjonalności Panel Administratora: Dodawanie nowych użytkowników oraz przypisywanie im daty ważności karnetu.
 
